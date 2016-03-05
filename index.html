@@ -1,57 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Base.js by 758915145</title>
+    <link rel="stylesheet" href="https://github.com/themes/midnight/stylesheets/styles.css">
+    <link rel="stylesheet" href="https://github.com/themes/midnight/stylesheets/github-dark.css">
+    <!--[if lt IE 9]>
+      <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="https://github.com/themes/midnight/stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-	<head>
-		<meta charset="UTF-8">
-		<title>代替jQuery的base.js</title>
-		<meta name="keywords" content="jQuery,baseJS,base" />
-		<meta name="description" content="一般网站的话，我用这个base.js来代替jQuery，base.js才几K大，不过够用了~" />
-		<style>
-			p.MsoNormal{
-			 margin:0pt;
-			 margin-bottom:.0001pt;
-			 text-align:justify;
-			 text-justify:inter-ideograph;
-			 font-family:'Times New Roman';
-			 
-			 }
-			 
-			 span.10{
-			 font-family:Calibri;
-			 }
-			 
-			 span.msoIns{
-			 text-decoration:underline;
-			 text-underline:single;
-			 color:blue;
-			 }
-			 
-			 span.msoDel{
-			 text-decoration:line-through;
-			 color:red;
-			 }
-			 
-			 table.MsoNormalTable{
-			 font-family:'Times New Roman';
-			 font-size:10.0000pt;
-			 }
-			 div.Section0{page:Section0;}
-			 body{width:960px;margin-left:auto;margin-right:auto;}
-			 ul{overflow:hidden;height:150px;}
-			li{display:block;float:left;width:50px;height:50px;background-color:#999;}
-		</style>
-	</head>
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/758915145/base.js">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/758915145/base.js/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/758915145/base.js/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-	<body>
-		<h1>base.js使用说明书</h1><span>一般网站的话，我用这个base.js来代替jQuery，base.js才几K大，不过够用了~<br>粗制滥造，请见谅。。<a href="https://github.com/758915145/base.js" target="_blank" title="base.js的github">我的github仓库</a></span>
-		<ul class="animate">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>base.js使用说明书</h1>
+          <p>一般网站的话，我用这个base.js来代替jQuery，base.js才几K大，不过够用了~</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/758915145">758915145</a></span>
+          <span class="credits right">Hosted on GitHub Pages — Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
 		<!--下面这货是从word里面保存成网页的，所以代码冗余严重-->
 		<!--StartFragment-->
 		<div class="Section0" style="layout-grid:15.6000pt;font-size:11.0000pt;">
@@ -61,190 +44,170 @@
 					
 					</span>
 			</p>
-			<p class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);">isMobile</span><span style="font-family:微软雅黑;font-weight:normal;"></span></p>
+			<p class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;">isMobile</span><span style="font-family:微软雅黑;font-weight:normal;"></span></p>
 			<p
-			class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);"><o:p>&nbsp;</o:p></span></p>
+			class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;"><o:p>&nbsp;</o:p></span></p>
 				<p class=MsoNormal><span style="font-family:Consolas;color:rgb(149,163,171);">//selector:比如'.mf'或'#mf',parent:想要获取元素共同的父级(一个元素)</span><span style="font-family:微软雅黑;font-weight:normal;"></span></p>
 				<p
-				class=MsoNormal><span style="font-family:宋体;color:rgb(62,75,83);">$</span><span style="font-family:Consolas;color:rgb(62,75,83);">.getEle(</span>
+				class=MsoNormal><span style="font-family:宋体;color:#F5F5F5;">$</span><span style="font-family:Consolas;color:#F5F5F5;">.getEle(</span>
 					<span
-					style="font-family:Consolas;color:rgb(165,120,0);">selector</span><span style="font-family:Consolas;color:rgb(62,75,83);">,</span><span style="font-family:Consolas;color:rgb(165,120,0);">parent</span>
+					style="font-family:Consolas;color:rgb(165,120,0);">selector</span><span style="font-family:Consolas;color:#F5F5F5;">,</span><span style="font-family:Consolas;color:rgb(165,120,0);">parent</span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">)</span><span style="font-family:Consolas;color:rgb(62,75,83);"></span></p>
-<p class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);"><o:p>&nbsp;</o:p></span></p>
+style="font-family:Consolas;color:#F5F5F5;">)</span><span style="font-family:Consolas;color:#F5F5F5;"></span></p>
+<p class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;"><o:p>&nbsp;</o:p></span></p>
 <p class=MsoNormal><span style="font-family:Consolas;color:rgb(149,163,171);">//obj:元素(</span><span style="font-family:宋体;color:rgb(149,163,171);">以下的</span>
 <span
-style="font-family:宋体;color:rgb(149,163,171);">obj<font face="宋体">都是元素</font></span><span style="font-family:Consolas;color:rgb(149,163,171);">),s:样式名</span><span style="font-family:Consolas;color:rgb(62,75,83);"></span></p>
+style="font-family:宋体;color:rgb(149,163,171);">obj<font face="宋体">都是元素</font></span><span style="font-family:Consolas;color:rgb(149,163,171);">),s:样式名</span><span style="font-family:Consolas;color:#F5F5F5;"></span></p>
 <p
-class=MsoNormal><span style="font-family:宋体;color:rgb(62,75,83);">$</span><span style="font-family:Consolas;color:rgb(62,75,83);">.getStyle(</span>
+class=MsoNormal><span style="font-family:宋体;color:#F5F5F5;">$</span><span style="font-family:Consolas;color:#F5F5F5;">.getStyle(</span>
 <span
-style="font-family:宋体;color:rgb(165,120,0);">obj</span><span style="font-family:Consolas;color:rgb(62,75,83);">,</span><span style="font-family:宋体;color:rgb(165,120,0);">s</span>
+style="font-family:宋体;color:rgb(165,120,0);">obj</span><span style="font-family:Consolas;color:#F5F5F5;">,</span><span style="font-family:宋体;color:rgb(165,120,0);">s</span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">)</span><span style="font-family:Consolas;color:rgb(62,75,83);"></span></p>
-<p class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);"><o:p>&nbsp;</o:p></span></p>
+style="font-family:Consolas;color:#F5F5F5;">)</span><span style="font-family:Consolas;color:#F5F5F5;"></span></p>
+<p class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;"><o:p>&nbsp;</o:p></span></p>
 <p class=MsoNormal><span style="font-family:Consolas;color:rgb(149,163,171);">//s:样式名,e:目标值,d:总耗时(毫秒)</span><span style="font-family:宋体;color:rgb(149,163,171);">,g:<font face="宋体" >效果名</font></span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">
+style="font-family:Consolas;color:#F5F5F5;">
 
 </span>
 </p>
-<p class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);">$.animate(</span><span style="font-family:Consolas;color:rgb(165,120,0);">obj</span>
+<p class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;">$.animate(</span><span style="font-family:Consolas;color:rgb(165,120,0);">obj</span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">,</span><span style="font-family:Consolas;color:rgb(165,120,0);">s</span><span style="font-family:Consolas;color:rgb(62,75,83);">,</span>
+style="font-family:Consolas;color:#F5F5F5;">,</span><span style="font-family:Consolas;color:rgb(165,120,0);">s</span><span style="font-family:Consolas;color:#F5F5F5;">,</span>
 <span
-style="font-family:Consolas;color:rgb(165,120,0);">e</span><span style="font-family:Consolas;color:rgb(62,75,83);">,</span><span style="font-family:Consolas;color:rgb(165,120,0);">d</span>
+style="font-family:Consolas;color:rgb(165,120,0);">e</span><span style="font-family:Consolas;color:#F5F5F5;">,</span><span style="font-family:Consolas;color:rgb(165,120,0);">d</span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">,</span><span style="font-family:宋体;color:rgb(165,120,0);">g</span><span style="font-family:Consolas;color:rgb(62,75,83);">)</span>
+style="font-family:Consolas;color:#F5F5F5;">,</span><span style="font-family:宋体;color:rgb(165,120,0);">g</span><span style="font-family:Consolas;color:#F5F5F5;">)</span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">
+style="font-family:Consolas;color:#F5F5F5;">
 
 </span>
 </p>
-<p class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);"><o:p>&nbsp;</o:p></span></p>
-<p class=MsoNormal><span style="font-family:Consolas;color:rgb(149,163,171);">//arr:将获得的元素放进该数组</span><span style="font-family:Consolas;color:rgb(62,75,83);"></span></p>
+<p class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;"><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal><span style="font-family:Consolas;color:rgb(149,163,171);">//arr:将获得的元素放进该数组</span><span style="font-family:Consolas;color:#F5F5F5;"></span></p>
 <p
-class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);">$.nextAll(</span><span style="font-family:Consolas;color:rgb(165,120,0);">obj</span>
+class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;">$.nextAll(</span><span style="font-family:Consolas;color:rgb(165,120,0);">obj</span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">,</span><span style="font-family:宋体;color:rgb(165,120,0);">arr</span><span style="font-family:Consolas;color:rgb(62,75,83);">)</span>
+style="font-family:Consolas;color:#F5F5F5;">,</span><span style="font-family:宋体;color:rgb(165,120,0);">arr</span><span style="font-family:Consolas;color:#F5F5F5;">)</span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">
+style="font-family:Consolas;color:#F5F5F5;">
 
 </span>
 </p>
-<p class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);"><o:p>&nbsp;</o:p></span></p>
-<p class=MsoNormal><span style="font-family:Consolas;color:rgb(149,163,171);">//arr:将获得的元素放进该数组</span><span style="font-family:Consolas;color:rgb(62,75,83);"></span></p>
+<p class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;"><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal><span style="font-family:Consolas;color:rgb(149,163,171);">//arr:将获得的元素放进该数组</span><span style="font-family:Consolas;color:#F5F5F5;"></span></p>
 <p
-class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);">$.prevAll(</span><span style="font-family:Consolas;color:rgb(165,120,0);">obj</span>
+class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;">$.prevAll(</span><span style="font-family:Consolas;color:rgb(165,120,0);">obj</span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">,</span><span style="font-family:宋体;color:rgb(165,120,0);">arr</span><span style="font-family:Consolas;color:rgb(62,75,83);">)</span>
+style="font-family:Consolas;color:#F5F5F5;">,</span><span style="font-family:宋体;color:rgb(165,120,0);">arr</span><span style="font-family:Consolas;color:#F5F5F5;">)</span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">
+style="font-family:Consolas;color:#F5F5F5;">
 
 </span>
 </p>
-<p class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);"><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;"><o:p>&nbsp;</o:p></span></p>
 <p class=MsoNormal><span style="font-family:Consolas;color:rgb(149,163,171);">//</span><span style="font-family:宋体;color:rgb(149,163,171);">略<font face="Consolas" >,</font><font face="宋体" >这部分是抄网上的</font></span>
 <span
-style="font-family:Consolas;color:rgb(62,75,83);">
+style="font-family:Consolas;color:#F5F5F5;">
 
 </span>
 </p>
-<p class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);">$.ajax(</span><span style="font-family:Consolas;color:rgb(62,75,83);"></span></p>
+<p class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;">$.ajax(</span><span style="font-family:Consolas;color:#F5F5F5;"></span></p>
 <p
-class=MsoNormal style="text-indent:21.0000pt;"><span style="font-family:Consolas;color:rgb(8,8,8);">{</span><span style="font-family:Consolas;color:rgb(62,75,83);"></span></p>
+class=MsoNormal style="text-indent:21.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">{</span><span style="font-family:Consolas;color:#F5F5F5;"></span></p>
 <p
-class=MsoNormal style="margin-left:21.0000pt;text-indent:21.0000pt;text-align:left;"><span style="font-family:Consolas;color:rgb(36,140,133);">"method"</span><span style="font-family:Consolas;color:rgb(62,75,83);">&nbsp;:</span>
+class=MsoNormal style="margin-left:21.0000pt;text-indent:21.0000pt;text-align:left;"><span style="font-family:Consolas;color:rgb(36,140,133);">"method"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span>
 <span
-style="font-family:Consolas;">&nbsp;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"post"</span><span style="font-family:Consolas;color:rgb(8,8,8);">,</span>
+style="font-family:Consolas;">&nbsp;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"post"</span><span style="font-family:Consolas;color:#F5F5F5;">,</span>
 <span
 style="font-family:Consolas;">
 
 </span>
 </p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:宋体;color:rgb(8,8,8);">&#9;</span>
+<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:Consolas;color:rgb(36,140,133);">"url"</span><span style="font-family:Consolas;color:rgb(62,75,83);">&nbsp;:</span><span style="font-family:Consolas;">&nbsp;</span>
+style="font-family:Consolas;color:rgb(36,140,133);">"url"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span><span style="font-family:Consolas;">&nbsp;</span>
 <span
-style="font-family:Consolas;color:rgb(36,140,133);">"demo.php"</span><span style="font-family:Consolas;color:rgb(8,8,8);">,</span><span style="font-family:Consolas;"></span></p>
+style="font-family:Consolas;color:rgb(36,140,133);">"demo.php"</span><span style="font-family:Consolas;color:#F5F5F5;">,</span><span style="font-family:Consolas;"></span></p>
 <p
-class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:宋体;color:rgb(8,8,8);">&#9;</span>
+class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:Consolas;color:rgb(36,140,133);">"data"</span><span style="font-family:Consolas;color:rgb(62,75,83);">&nbsp;:</span><span style="font-family:Consolas;">&nbsp;</span>
+style="font-family:Consolas;color:rgb(36,140,133);">"data"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span><span style="font-family:Consolas;">&nbsp;</span>
 <span
-style="font-family:Consolas;color:rgb(8,8,8);">{</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:宋体;color:rgb(8,8,8);">&#9;</span>
+style="font-family:Consolas;color:#F5F5F5;">{</span><span style="font-family:Consolas;"></span></p>
+<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:宋体;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"name"</span><span style="font-family:Consolas;color:rgb(62,75,83);">&nbsp;:</span>
+style="font-family:宋体;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"name"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span>
 <span
-style="font-family:Consolas;">&nbsp;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"gaga"</span><span style="font-family:Consolas;color:rgb(8,8,8);">,</span>
-<span
-style="font-family:Consolas;">
-
-</span>
-</p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:宋体;color:rgb(8,8,8);">&#9;</span>
-<span
-style="font-family:宋体;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"age"</span><span style="font-family:Consolas;color:rgb(62,75,83);">&nbsp;:</span>
-<span
-style="font-family:Consolas;">&nbsp;</span><span style="font-family:Consolas;color:rgb(155,28,235);">10000000</span><span style="font-family:Consolas;color:rgb(8,8,8);">,</span>
+style="font-family:Consolas;">&nbsp;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"gaga"</span><span style="font-family:Consolas;color:#F5F5F5;">,</span>
 <span
 style="font-family:Consolas;">
 
 </span>
 </p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:宋体;color:rgb(8,8,8);">&#9;</span>
+<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:宋体;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"num"</span><span style="font-family:Consolas;color:rgb(62,75,83);">&nbsp;:</span>
+style="font-family:宋体;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"age"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span>
+<span
+style="font-family:Consolas;">&nbsp;</span><span style="font-family:Consolas;color:rgb(155,28,235);">10000000</span><span style="font-family:Consolas;color:#F5F5F5;">,</span>
+<span
+style="font-family:Consolas;">
+
+</span>
+</p>
+<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
+<span
+style="font-family:宋体;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"num"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span>
 <span
 style="font-family:Consolas;">&nbsp;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"12346&598"</span><span style="font-family:Consolas;"></span></p>
 <p
 class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;">&#9;</span><span style="font-family:Consolas;">&#9;</span>
 <span
-style="font-family:Consolas;color:rgb(8,8,8);">},</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span>
+style="font-family:Consolas;color:#F5F5F5;">},</span><span style="font-family:Consolas;"></span></p>
+<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:Consolas;color:rgb(36,140,133);">"success"</span><span style="font-family:Consolas;color:rgb(62,75,83);">&nbsp;</span><span style="font-family:Consolas;">:</span>
+style="font-family:Consolas;color:rgb(36,140,133);">"success"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;</span><span style="font-family:Consolas;">:</span>
 <span
-style="font-family:Consolas;color:rgb(54,75,192);">function</span><span style="font-family:Consolas;color:rgb(8,8,8);">(</span><span style="font-family:Consolas;color:rgb(165,120,0);">data</span>
+style="font-family:Consolas;color:rgb(54,75,192);">function</span><span style="font-family:Consolas;color:#F5F5F5;">(</span><span style="font-family:Consolas;color:rgb(165,120,0);">data</span>
 <span
-style="font-family:Consolas;color:rgb(8,8,8);">){</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span>
+style="font-family:Consolas;color:#F5F5F5;">){</span><span style="font-family:Consolas;"></span></p>
+<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(8,8,8);">alert(data);</span><span style="font-family:Consolas;"></span></p>
+style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">alert(data);</span><span style="font-family:Consolas;"></span></p>
 <p
-class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span>
+class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:Consolas;color:rgb(8,8,8);">},</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span>
+style="font-family:Consolas;color:#F5F5F5;">},</span><span style="font-family:Consolas;"></span></p>
+<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:Consolas;color:rgb(36,140,133);">"Error"</span><span style="font-family:Consolas;color:rgb(62,75,83);">&nbsp;</span><span style="font-family:Consolas;">:</span>
+style="font-family:Consolas;color:rgb(36,140,133);">"Error"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;</span><span style="font-family:Consolas;">:</span>
 <span
-style="font-family:Consolas;color:rgb(54,75,192);">function</span><span style="font-family:Consolas;color:rgb(8,8,8);">(</span><span style="font-family:Consolas;color:rgb(165,120,0);">text</span>
+style="font-family:Consolas;color:rgb(54,75,192);">function</span><span style="font-family:Consolas;color:#F5F5F5;">(</span><span style="font-family:Consolas;color:rgb(165,120,0);">text</span>
 <span
-style="font-family:Consolas;color:rgb(8,8,8);">){</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span>
+style="font-family:Consolas;color:#F5F5F5;">){</span><span style="font-family:Consolas;"></span></p>
+<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(8,8,8);">alert(</span><span style="font-family:Consolas;color:rgb(60,122,3);">text</span>
+style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">alert(</span><span style="font-family:Consolas;color:rgb(60,122,3);">text</span>
 <span
-style="font-family:Consolas;color:rgb(8,8,8);">);</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span>
+style="font-family:Consolas;color:#F5F5F5;">);</span><span style="font-family:Consolas;"></span></p>
+<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:Consolas;color:rgb(8,8,8);">},</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span><span style="font-family:Consolas;color:rgb(8,8,8);">&#9;</span>
+style="font-family:Consolas;color:#F5F5F5;">},</span><span style="font-family:Consolas;"></span></p>
+<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
-style="font-family:Consolas;color:rgb(36,140,133);">"async"</span><span style="font-family:Consolas;color:rgb(62,75,83);">&nbsp;:</span><span style="font-family:Consolas;">&nbsp;</span>
+style="font-family:Consolas;color:rgb(36,140,133);">"async"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span><span style="font-family:Consolas;">&nbsp;</span>
 <span
 style="font-family:Consolas;color:rgb(155,28,235);">false</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-indent:21.0000pt;"><span style="font-family:Consolas;color:rgb(8,8,8);">}</span><span style="font-family:Consolas;color:rgb(8,8,8);"></span></p>
+<p class=MsoNormal style="text-indent:21.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">}</span><span style="font-family:Consolas;color:#F5F5F5;"></span></p>
 <p
-class=MsoNormal><span style="font-family:Consolas;color:rgb(62,75,83);">)</span><span style="font-family:'Times New Roman';"></span></p>
+class=MsoNormal><span style="font-family:Consolas;color:#F5F5F5;">)</span><span style="font-family:'Times New Roman';"></span></p>
 		</div>
 		<!--EndFragment-->
+      </section>
 
-		<script>
-			/*base.js开始*/
-			isMobile=(a=navigator.userAgent.toLowerCase())&&(a.match(/ipad/i)=="ipad"||a.match(/iphone os/i)=="iphone os"||a.match(/midp/i)=="midp"||a.match(/rv:1.2.3.4/i)=="rv:1.2.3.4"||a.match(/ucweb/i)=="ucweb"||a.match(/android/i)=="android"||a.match(/windows ce/i)=="windows ce"||a.match(/windows mobile/i)=="windows mobile"),IE6=!-[1,]&&!window.XMLHttpRequest,IE7=navigator.userAgent.indexOf("MSIE 7.0")>0,base={getEle:function(h,g){if(!(IE6||IE7)){return g?g.querySelectorAll(h):document.querySelectorAll(h)}else{if(h.indexOf("#")==0){return document.getElementById(h.split("#")[1])}else{g?c=g.getElementsByTagName("*"):c=document.getElementsByTagName("*");d=[],e=[];for(i=0;i<c.length;i++){e=c[i].className.split(" ");for(j=0;j<e.length;j++){if(e[j]==h.split(".")[1]){d.push(c[i])}}}return d}}},getStyle:function(h,g){return h.currentStyle?h.currentStyle[g]:h.ownerDocument.defaultView.getComputedStyle(h,null)[g]},animate:function(h,k,m,n,l){l==undefined?l="easeOutQuad":null;clearInterval(h.s);f=k=="opacity"?"":"px";h.d=n,h.b=parseFloat($.getStyle(h,k)),h.c=m-h.b,h.u=h.d/20,h.s=setInterval(function(){h.u==0?(h.style[k]=m+f)&&clearInterval(h.s):h.style[k]=easing[l](0,h.d-(h.u--*20),h.b,h.c,h.d)+f},20)},nextAll:function(h,g){c=h.nextSibling;c=c!=null&&c.nodeName=="#text"?c.nextSibling:c;if(c!=null){g.push(c);base.nextAll(c,g)}else{return}},prevAll:function(h,g){c=h.previousSibling;c=c!=null&&c.nodeName=="#text"?c.previousSibling:c;if(c!=null){g.push(c);base.prevAll(c,g)}else{return}},ajax:function(g){function h(){if(IE6){b=["MSXML2.XMLHttp.6.0","MSXML2.XMLHttp.3.0","MSXML2.XMLHttp",];for(i=0;i<b.length;i++){try{return new ActiveXObject(b[i])}catch(m){}}}else{return new XMLHttpRequest()}}function l(m){c=[];for(i in m){c.push(encodeURIComponent(i)+"="+encodeURIComponent(m[i]))}return c.join("&")}x=h();g.url=g.url;g.data=l(g.data);if(g.method==="get"){g.url+=g.url.indexOf("?")=="-1"?"?"+g.data:"&"+g.data}if(g.async===true){x.onreadystatechange=function(){if(x.readyState==4){k()}}}x.open(g.method,g.url,g.async);if(g.method==="post"){x.setRequestHeader("Content-Type","application/x-www-form-urlencoded");x.send(g.data)}else{x.send(null)}if(g.async===false){k()}function k(){if(x.status==200){g.success(x.responseText)}else{g.Error("获取数据失败，错误代号为："+x.status+"错误信息为："+x.statusText)}}}},easing={easeOutQuad:function(h,k,g,m,l){return -m*(k/=l)*(k-2)+g}};typeof $=="undefined"?$=base:console.log("$符号冲突");
-			/*base.js结束*/
-			
-			/*自己用顺手，不了解这个base.js的人用估计得头疼*/
-			
-			//base.js的选择器
-			ul=$.getEle('.animate');
-			console.log(ul);
-			
-			//base.js的动画
-			li=document.getElementsByTagName('li');
-			for(i=0;i<li.length;i++){
-				~function(i){
-					li[i].onmouseenter=function(){
-						$.animate(li[i],'height',150,400);
-					}
-					li[i].onmouseleave=function(){
-						$.animate(li[i],'height',50,400);
-					}
-				}(i);
-			}
-		</script>
-	</body>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  
 
-</html>
+</body></html>
