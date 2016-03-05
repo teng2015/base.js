@@ -3,8 +3,788 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Base.js by 758915145</title>
-    <link rel="stylesheet" href="https://github.com/themes/midnight/stylesheets/styles.css">
-    <link rel="stylesheet" href="https://github.com/themes/midnight/stylesheets/github-dark.css">
+    <style>
+/* normalize.css 2012-02-07T12:37 UTC - https://github.com/necolas/normalize.css */
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ */
+audio:not([controls]) {
+  display: none;
+}
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+[hidden] {
+  display: none;
+}
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/*
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+body {
+  margin: 0;
+}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses outline displayed oddly in Chrome
+ */
+a:focus {
+  outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers
+ * people.opera.com/patrickl/experiments/keyboard/test
+ */
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses font sizes and margins set differently in IE6/7
+ * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
+*/
+b,
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 1em 40px;
+}
+
+/*
+ * Addresses styling not present in S5, Chrome
+ */
+dfn {
+  font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE6/7/8/9
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/*
+ * Addresses margins set differently in IE6/7
+ */
+p,
+pre {
+  margin: 1em 0;
+}
+
+/*
+ * Corrects font family set oddly in IE6, S4/5, Chrome
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/*
+ * 1. Addresses CSS quotes not supported in IE6/7
+ * 2. Addresses quote property not supported in S4
+ */
+/* 1 */
+q {
+  quotes: none;
+}
+
+/* 2 */
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+small {
+  font-size: 75%;
+}
+
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+/*
+ * Addresses margins set differently in IE6/7
+ */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+/*
+ * Addresses paddings set differently in IE6/7
+ */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+
+/*
+ * Corrects list images handled incorrectly in IE7
+ */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
+ * 2. Improves image quality when scaled in IE7
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/*
+ * Corrects overflow displayed oddly in IE9
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE6/7/8/9, S5, O11
+ */
+figure {
+  margin: 0;
+}
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Corrects margin displayed oddly in IE6/7
+ */
+form {
+  margin: 0;
+}
+
+/*
+ * Define consistent border, margin, and padding
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects text not wrapping in FF3 
+ * 3. Corrects alignment displayed oddly in IE6/7
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers
+ * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+ * 3. Improves appearance and consistency in all browsers
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/*
+ * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
+ */
+button,
+input {
+  line-height: normal;
+  /* 1 */
+}
+
+/*
+ * 1. Improves usability and consistency of cursor style between image-type 'input' and others
+ * 2. Corrects inability to style clickable 'input' types in iOS
+ * 3. Removes inner spacing in IE7 without affecting normal text inputs
+ *    Known issue: inner spacing remains in IE6
+ */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 1 */
+  -webkit-appearance: button;
+  /* 2 */
+  *overflow: visible;
+  /* 3 */
+}
+
+/*
+ * Re-set default cursor for disabled elements
+ */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to content-box in IE8/9
+ * 2. Removes excess padding in IE8/9
+ * 3. Removes excess padding in IE7
+      Known issue: excess padding remains in IE6
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/*
+ * 1. Addresses appearance set to searchfield in S5, Chrome
+ * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in S5, Chrome on OS X
+ */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in FF3+
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  padding: 0px 0 20px 0px;
+  margin: 0px;
+  font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #AAA;
+  font-weight: normal;
+  background: #252525;
+  background-attachment: fixed !important;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2a2a29), color-stop(100%, #1c1c1c));
+  background: -webkit-linear-gradient(#2a2a29, #1c1c1c);
+  background: -moz-linear-gradient(#2a2a29, #1c1c1c);
+  background: -o-linear-gradient(#2a2a29, #1c1c1c);
+  background: -ms-linear-gradient(#2a2a29, #1c1c1c);
+  background: linear-gradient(#2a2a29, #1c1c1c);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #e8e8e8;
+  margin: 0 0 10px;
+  font-weight: normal;
+}
+
+p, ul, ol, table, pre, dl {
+  margin: 0 0 20px;
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h4, h5, h6 {
+  color: #e8e8e8;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: normal;
+}
+
+a {
+  color: #ffcc00;
+  font-weight: 400;
+  text-decoration: none;
+}
+a:hover {
+  color: #ffeb9b;
+}
+
+a small {
+  font-size: 11px;
+  color: #666;
+  margin-top: -0.6em;
+  display: block;
+}
+
+ul {
+  list-style-image: url("https://github.com/themes/midnight/images/bullet.png");
+}
+
+strong {
+  font-family: 'OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: normal;
+}
+
+.wrapper {
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
+}
+
+section img {
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: 3px solid #ffcc00;
+  margin: 0;
+  padding: 0 0 0 20px;
+  font-style: italic;
+}
+
+code {
+  font-family: "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  color: #efefef;
+  font-size: 13px;
+  margin: 0 4px;
+  padding: 4px 6px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+}
+
+pre {
+  padding: 8px 15px;
+  background: #191919;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #121212;
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  overflow: auto;
+  overflow-y: hidden;
+}
+pre code {
+  color: #efefef;
+  text-shadow: 0px 1px 0px #000;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 5px 10px;
+  border-bottom: 1px solid #434343;
+  color: #b6b6b6;
+  font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: normal;
+}
+
+td {
+  text-align: left;
+  padding: 5px 10px;
+  border-bottom: 1px solid #434343;
+}
+
+hr {
+  border: 0;
+  outline: none;
+  height: 3px;
+  background: transparent url("https://github.com/themes/midnight/images/hr.gif") center center repeat-x;
+  margin: 0 0 20px;
+}
+
+dt {
+  color: #F0E7D5;
+  font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: normal;
+}
+
+#header {
+  z-index: 100;
+  left: 0;
+  top: 0px;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  background: url("https://github.com/themes/midnight/images/nav-bg.gif") #353535;
+  border-bottom: 4px solid #434343;
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+}
+#header nav {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 10px;
+  background: blue;
+  margin: 6px auto;
+}
+#header nav li {
+  font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  list-style: none;
+  display: inline;
+  color: white;
+  line-height: 50px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+}
+#header nav li a {
+  color: white;
+  border: 1px solid #5d910b;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #93bd20), color-stop(100%, #659e10));
+  background: -webkit-linear-gradient(#93bd20, #659e10);
+  background: -moz-linear-gradient(#93bd20, #659e10);
+  background: -o-linear-gradient(#93bd20, #659e10);
+  background: -ms-linear-gradient(#93bd20, #659e10);
+  background: linear-gradient(#93bd20, #659e10);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
+  -o-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
+  background-color: #93bd20;
+  padding: 10px 12px;
+  margin-top: 6px;
+  line-height: 14px;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+}
+#header nav li a:hover {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #749619), color-stop(100%, #527f0e));
+  background: -webkit-linear-gradient(#749619, #527f0e);
+  background: -moz-linear-gradient(#749619, #527f0e);
+  background: -o-linear-gradient(#749619, #527f0e);
+  background: -ms-linear-gradient(#749619, #527f0e);
+  background: linear-gradient(#749619, #527f0e);
+  background-color: #659e10;
+  border: 1px solid #527f0e;
+  -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
+  -o-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
+}
+#header nav li.fork {
+  float: left;
+  margin-left: 0px;
+}
+#header nav li.downloads {
+  float: right;
+  margin-left: 6px;
+}
+#header nav li.title {
+  float: right;
+  margin-right: 10px;
+  font-size: 11px;
+}
+
+section {
+  max-width: 650px;
+  padding: 30px 0px 50px 0px;
+  margin: 20px 0;
+  margin-top: 70px;
+}
+section #title {
+  border: 0;
+  outline: none;
+  margin: 0 0 50px 0;
+  padding: 0 0 5px 0;
+}
+section #title h1 {
+  font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 40px;
+  text-align: center;
+  line-height: 36px;
+}
+section #title p {
+  color: #d7cfbe;
+  font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  text-align: center;
+}
+section #title .credits {
+  font-size: 11px;
+  font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #696969;
+  margin-top: -10px;
+}
+section #title .credits.left {
+  float: left;
+}
+section #title .credits.right {
+  float: right;
+}
+
+@media print, screen and (max-width: 720px) {
+  #title .credits {
+    display: block;
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+  }
+  #title .credits .left {
+    float: none;
+    display: block;
+  }
+  #title .credits .right {
+    float: none;
+    display: block;
+  }
+}
+h3{color:#93bd20;}
+.wrapper{font-family:"microsoft yahei";}
+@media print, screen and (max-width: 480px) {
+  #header {
+    margin-top: -20px;
+  }
+
+  section {
+    margin-top: 40px;
+  }
+
+  nav {
+    display: none;
+  }
+}
+    </style>
     <!--[if lt IE 9]>
       <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <![endif]-->
@@ -34,7 +814,25 @@
           <span class="credits left">Project maintained by <a href="https://github.com/758915145">758915145</a></span>
           <span class="credits right">Hosted on GitHub Pages — Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
+        
+        <h3>普通网站常用的JS</h3>
+        <p>使用jQuery可以很方便地完成一些普通网站需要用到的js，比如选择元素、获取并设置元素的样式、做动画、ajax等。这些功能用js写可能会麻烦一些，但是我觉得为了实现这些简单的功能就是用jQuery，是没有必要的。（当然，使用jQuery也有它的好处，那就是可以使用网上丰富的jQuery插件。）</p>
+        <p>网上也有一些比jQuery小的类库，不过我都不太满意。于是自己写了一个base.js，虽然js水平有限，但也勉强实现了上述那些功能。</p>
+        
+        <h3>base.js</h3>
+        <p>base.js有几个功能：</p>
+        <p>1、判断是否是移动端。—— isMobile</p>
+        <p>2、选择元素。—— $.getEle</p>
+        <p>3、获取样式。—— $.getStyle</p>
+        <p>4、动画。—— $.animate</p>
+        <p>5、获取某元素后面的所有同胞元素。—— $.nextAll</p>
+        <p>6、获取某元素前面的所有同胞元素。—— $.prevAll</p>
+        <p>7、ajax。—— $.getEle</p>
+		<p>下载地址：<a href="https://rawgit.com/758915145/base.js/master/base.min.js" target="_blank">base.min.js</a></p>
+		<p>也欢迎关注我的github：<a href="https://github.com/758915145" target="_blank">758915145</a></p>
 
+		<h3>使用方法</h3>
+		<hr />
 		<!--下面这货是从word里面保存成网页的，所以代码冗余严重-->
 		<!--StartFragment-->
 		<div class="Section0" style="layout-grid:15.6000pt;font-size:11.0000pt;">
@@ -124,18 +922,18 @@ style="font-family:Consolas;">
 
 </span>
 </p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
+<p class=MsoNormal style="text-align:left;text-indent:42.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:Consolas;color:rgb(36,140,133);">"url"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span><span style="font-family:Consolas;">&nbsp;</span>
 <span
 style="font-family:Consolas;color:rgb(36,140,133);">"demo.php"</span><span style="font-family:Consolas;color:#F5F5F5;">,</span><span style="font-family:Consolas;"></span></p>
 <p
-class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
+class=MsoNormal style="text-align:left;text-indent:42.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:Consolas;color:rgb(36,140,133);">"data"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span><span style="font-family:Consolas;">&nbsp;</span>
 <span
 style="font-family:Consolas;color:#F5F5F5;">{</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
+<p class=MsoNormal style="text-align:left;text-indent:63.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:宋体;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"name"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span>
 <span
@@ -145,7 +943,7 @@ style="font-family:Consolas;">
 
 </span>
 </p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
+<p class=MsoNormal style="text-align:left;text-indent:63.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:宋体;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"age"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span>
 <span
@@ -155,45 +953,45 @@ style="font-family:Consolas;">
 
 </span>
 </p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
+<p class=MsoNormal style="text-align:left;text-indent:63.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:宋体;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:宋体;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"num"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span>
 <span
 style="font-family:Consolas;">&nbsp;</span><span style="font-family:Consolas;color:rgb(36,140,133);">"12346&598"</span><span style="font-family:Consolas;"></span></p>
 <p
-class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;">&#9;</span><span style="font-family:Consolas;">&#9;</span>
+class=MsoNormal style="text-align:left;text-indent:42.0000pt;"><span style="font-family:Consolas;">&#9;</span><span style="font-family:Consolas;">&#9;</span>
 <span
 style="font-family:Consolas;color:#F5F5F5;">},</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
+<p class=MsoNormal style="text-align:left;text-indent:42.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:Consolas;color:rgb(36,140,133);">"success"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;</span><span style="font-family:Consolas;">:</span>
 <span
 style="font-family:Consolas;color:rgb(54,75,192);">function</span><span style="font-family:Consolas;color:#F5F5F5;">(</span><span style="font-family:Consolas;color:rgb(165,120,0);">data</span>
 <span
 style="font-family:Consolas;color:#F5F5F5;">){</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
+<p class=MsoNormal style="text-align:left;text-indent:63.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">alert(data);</span><span style="font-family:Consolas;"></span></p>
 <p
-class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
+class=MsoNormal style="text-align:left;text-indent:42.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:Consolas;color:#F5F5F5;">},</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
+<p class=MsoNormal style="text-align:left;text-indent:42.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:Consolas;color:rgb(36,140,133);">"Error"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;</span><span style="font-family:Consolas;">:</span>
 <span
 style="font-family:Consolas;color:rgb(54,75,192);">function</span><span style="font-family:Consolas;color:#F5F5F5;">(</span><span style="font-family:Consolas;color:rgb(165,120,0);">text</span>
 <span
 style="font-family:Consolas;color:#F5F5F5;">){</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
+<p class=MsoNormal style="text-align:left;text-indent:63.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">alert(</span><span style="font-family:Consolas;color:rgb(60,122,3);">text</span>
 <span
 style="font-family:Consolas;color:#F5F5F5;">);</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
+<p class=MsoNormal style="text-align:left;text-indent:42.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:Consolas;color:#F5F5F5;">},</span><span style="font-family:Consolas;"></span></p>
-<p class=MsoNormal style="text-align:left;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
+<p class=MsoNormal style="text-align:left;text-indent:42.0000pt;"><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span><span style="font-family:Consolas;color:#F5F5F5;">&#9;</span>
 <span
 style="font-family:Consolas;color:rgb(36,140,133);">"async"</span><span style="font-family:Consolas;color:#F5F5F5;">&nbsp;:</span><span style="font-family:Consolas;">&nbsp;</span>
 <span
