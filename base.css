@@ -1,0 +1,22 @@
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:14px arial,'\5FAE\8F6F\96C5\9ED1',sans-serif,'\5B8B\4F53',tahoma;margin:0}
+a{text-decoration:none}
+em{font-style:normal}
+ol,ul,li{list-style-type:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
+.cl{clear:both}
+.fs{font-size:12*@px;font-family:'\5B8B\4F53';}
+.fl{float:left; display:inline}
+.fr{float:right; display:inline}
+.tl{text-align:left}
+.tc{text-align:center}
+.tr{text-align:right}
+.md{margin-left:auto; margin-right:auto}
+.vm{vertical-align:middle}
+.pr{position:relative}
+.pa{position:absolute}
+.show{display:block}
+.hide{display:none}
+.hd{overflow:hidden}
