@@ -4,106 +4,108 @@
  * 2016/3/02：取消使用eval方法
  */
 isMobile = (a = navigator.userAgent.toLowerCase()) && (a.match(/ipad/i) == "ipad" || a.match(/iphone os/i) == "iphone os" || a.match(/midp/i) == "midp" || a.match(/rv:1.2.3.4/i) == "rv:1.2.3.4" || a.match(/ucweb/i) == "ucweb" || a.match(/android/i) == "android" || a.match(/windows ce/i) == "windows ce" || a.match(/windows mobile/i) == "windows mobile"), IE6 = !-[1, ] && !window.XMLHttpRequest, IE7 = navigator.userAgent.indexOf("MSIE 7.0") > 0, base = {
-	getEle: function(a, b) {
+	getEle: function(selector, parent) {
 		if (!(IE6 || IE7)) {
-			return b ? b.querySelectorAll(a) : document.querySelectorAll(a)
+			return parent ? parent.querySelectorAll(selector) : document.querySelectorAll(selector)
 		} else {
-			if (a.indexOf("#") == 0) {
-				return document.getElementById(a.split("#")[1])
+			if (selector.indexOf("#") == 0) {
+				return document.getElementById(selector.split("#")[1])
 			} else {
-				b ? c = b.getElementsByTagName("*") : c = document.getElementsByTagName("*");
-				d = [], e = [];
-				for (i = 0; i < c.length; i++) {
-					e = c[i].className.split(" ");
-					for (j = 0; j < e.length; j++) {
-						if (e[j] == a.split(".")[1]) {
-							d.push(c[i])
+				objArr =parent ?  parent.getElementsByTagName("*") : document.getElementsByTagName("*");
+				result = [], classArr = [];
+				for (i = 0; i < objArr.length; i++) {
+					classArr = objArr[i].className.split(" ");
+					for (j = 0; j < classArr.length; j++) {
+						if (classArr[j] == selector.split(".")[1]) {
+							result.push(objArr[i])
 						}
 					}
 				}
-				return d
+				return result
 			}
 		}
 	},
-	getStyle: function(a, b) {
-		return a.currentStyle ? a.currentStyle[b] : a.ownerDocument.defaultView.getComputedStyle(a, null)[b]
+	getStyle: function(obj, styleName) {
+		return obj.currentStyle ? obj.currentStyle[styleName] : obj.ownerDocument.defaultView.getComputedStyle(obj, null)[styleName]
 	},
-	animate: function(a, s, e, d, g ) {
-		g == undefined ? g = "easeOutQuad" : null;
-		clearInterval(a.s);
-		f = s == "opacity" ? "" : "px";
-		a.d = d, a.b = parseFloat($.getStyle(a, s)), a.c = e - a.b, a.u = a.d / 20, a.s = setInterval(function() {
-			a.u == 0 ? (a.style[s]=e+f) && clearInterval(a.s) : a.style[s]=easing[g](0,a.d-(a.u--*20),a.b,a.c,a.d)+f
+	animate: function(obj, styleName, endValue, time, effect ) {
+		effect == undefined ? effect = "easeOutQuad" : null;
+		clearInterval(obj.setInterval);
+		px = styleName == "opacity" ? "" : "px";
+		obj.time = time, obj.styleValue = parseFloat($.getStyle(obj, styleName)), obj.difference = endValue - obj.styleValue, obj.frequency = obj.time / 20, obj.setInterval = setInterval(function() {
+			obj.frequency == 0 ?
+			(obj.style[styleName]=endValue+px) && clearInterval(obj.setInterval) :
+			obj.style[styleName]=easing[effect](0,obj.time-(obj.frequency--*20),obj.styleValue,obj.difference,obj.time)+px
 		}, 20)
 	},
-	nextAll: function(a, b) {
-		c = a.nextSibling;
-		c = c != null && c.nodeName == "#text" ? c.nextSibling : c;
-		if (c != null) {
-			b.push(c);
-			base.nextAll(c, b)
+	nextAll: function(obj, arr) {
+		next = obj.nextSibling;
+		next = next != null && next.nodeName == "#text" ? next.nextSibling : next;
+		if (next != null) {
+			arr.push(next);
+			base.nextAll(next, arr)
 		} else {
 			return
 		}
 	},
-	prevAll: function(a, b) {
-		c = a.previousSibling;
-		c = c != null && c.nodeName == "#text" ? c.previousSibling : c;
-		if (c != null) {
-			b.push(c);
-			base.prevAll(c, b)
+	prevAll: function(obj, arr) {
+		prev = obj.previousSibling;
+		prev = prev != null && prev.nodeName == "#text" ? prev.previousSibling : prev;
+		if (prev != null) {
+			arr.push(prev);
+			base.prevAll(prev, arr)
 		} else {
 			return
 		}
 	},
-	ajax: function(a) {
+	ajax: function(obj) {
 		function createXHR() {
 			if (IE6) {
-				b = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0", "MSXML2.XMLHttp", ];
-				for (i = 0; i < b.length; i++) {
+				version = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0", "MSXML2.XMLHttp", ];
+				for (i = 0; i < version.length; i++) {
 					try {
-						return new ActiveXObject(b[i])
+						return new ActiveXObject(version[i])
 					} catch (e) {}
 				}
 			} else {
 				return new XMLHttpRequest()
 			}
 		}
-		function params(d) {
+		function params(data) {
 			c = [];
-			for (i in d) {
-				c.push(encodeURIComponent(i) + "=" + encodeURIComponent(d[i]))
+			for (i in data) {
+				c.push(encodeURIComponent(i) + "=" + encodeURIComponent(data[i]))
 			}
 			return c.join("&")
 		}
-		x = createXHR();
-		a.url = a.url;
-		a.data = params(a.data);
-		if (a.method === "get") {
-			a.url += a.url.indexOf("?") == "-1" ? "?" + a.data : "&" + a.data
+		var xhr = createXHR();
+		obj.url = obj.url;
+		obj.data = params(obj.data);
+		if (obj.method === "get") {
+			obj.url += obj.url.indexOf("?") == "-1" ? "?" + obj.data : "&" + obj.data
 		}
-		if (a.async === true) {
-			x.onreadystatechange = function() {
-				if (x.readyState == 4) {
+		if (obj.async === true) {
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
 					callBack()
 				}
 			}
 		}
-		x.open(a.method, a.url, a.async);
-		if (a.method === "post") {
-			x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			x.send(a.data)
+		xhr.open(obj.method, obj.url, obj.async);
+		if (obj.method === "post") {
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			xhr.send(obj.data)
 		} else {
-			x.send(null)
+			xhr.send(null)
 		}
-		if (a.async === false) {
+		if (obj.async === false) {
 			callBack()
 		}
 		function callBack() {
-			if (x.status == 200) {
-				a.success(x.responseText)
+			if (xhr.status == 200) {
+				obj.success(xhr.responseText)
 			} else {
-				a.Error("获取数据失败，错误代号为：" + x.status + "错误信息为：" + x.statusText)
+				obj.Error("获取数据失败，错误代号为：" + xhr.status + "错误信息为：" + xhr.statusText)
 			}
 		}
 	}
